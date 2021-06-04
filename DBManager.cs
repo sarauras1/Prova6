@@ -78,7 +78,7 @@ namespace Prova6SaraUras
                     var nome = reader["Nome"];
                     var cognome = reader["Cognome"];
                     var CodiceFiscale = reader["CodiceFiscale"];                  
-                    var anni = reader["AnniInizioAttivita"];
+                    var anni = reader["AnnoInizioAttivita"];
 
                     Console.WriteLine($"Agenti di Area geografica {geo}");
                     Console.WriteLine($"\n Nome {nome}");
@@ -138,9 +138,9 @@ namespace Prova6SaraUras
 
 
 
-                command.CommandText = "select * from dbo.Agente where AnniInizioAttivita => @AnniInizioAttivita";
+                command.CommandText = "select * from dbo.Agente where AnniInizioAttivita => @AnnoInizioAttivita";
 
-                command.Parameters.AddWithValue("@AnniInizioAttivita", anni);
+                command.Parameters.AddWithValue("@AnnoInizioAttivita", anni);
 
                 SqlDataReader reader = command.ExecuteReader();
 
