@@ -97,7 +97,7 @@ namespace Prova6SaraUras
                 connection.Close(); // !!!
             }
         }
-        internal static bool CheckBook(string codice)
+        internal static bool Check(string codice)
         {
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -182,7 +182,7 @@ namespace Prova6SaraUras
                 //definisco il tipo input
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = "insert into dbo.Agente values (@Nome, @Cognome, @CodiceFiscale, @AreaGeo, @AnnoInizioAttivita)";
-                if (!CheckBook(codice))
+                if (!Check(codice))
                 {
                     command.Parameters.AddWithValue("@Nome", nome);
                     command.Parameters.AddWithValue("@Cognome", cognome);
@@ -193,7 +193,7 @@ namespace Prova6SaraUras
 
                     command.ExecuteNonQuery();
                 }
-                if (CheckBook(codice))
+                if (Check(codice))
                 {
 
                     Console.WriteLine("L Agente e gia presente nel database");
