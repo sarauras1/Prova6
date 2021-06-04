@@ -73,12 +73,11 @@ namespace Prova6SaraUras
                
                 while (reader.Read())
                 {
-                    Console.WriteLine("Libro Audio");
+                   
 
                     var nome = reader["Nome"];
                     var cognome = reader["Cognome"];
-                    var CodiceFiscale = reader["CodiceFiscale"];
-                  
+                    var CodiceFiscale = reader["CodiceFiscale"];                  
                     var anni = reader["AnniInizioAttivita"];
 
                     Console.WriteLine($"Agenti di Area geografica {geo}");
